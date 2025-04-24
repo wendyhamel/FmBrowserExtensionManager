@@ -78,22 +78,27 @@ window.extensionsJS = function () {
 			}
 		]),
 
-		activeFilter: Alpine.$persist(0),
+		activeFilter: Alpine.$persist('all'),
+
+		activeExtensions() {
+			return this.extensions.filter(extension => extension.isActive === true);
+		},
+
+		inActiveExtensions() {
+			return this.extensions.filter(extension => extension.isActive === false);
+		},
 
 		filteredExtensions() {
-			let filteredExtensionsArray = this.extensions
-			if(this.activeFilter === 1) {
-				filteredExtensionsArray = this.extensions.filter((extension) => {
-					return extension.isActive === true
-				})
-				return filteredExtensionsArray
-			} else if (this.activeFilter === 2) {
-				filteredExtensionsArray = this.extensions.filter((extension) => {
-					return extension.isActive === false
-				})
-				return filteredExtensionsArray
-			}
-			return this.extensions;
+			return {
+				'all': this.extensions,
+				'active': this.activeExtensions(),
+				'inactive': this.inActiveExtensions()
+			}[this.activeFilter];
+		},
+
+		removeExtension(extension) {
+			let index = this.extensions.indexOf(extension)
+			this.extensions.splice(index, 1)
 		},
 
 		toggleDarkMode () {

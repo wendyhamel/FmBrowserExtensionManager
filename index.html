@@ -31,9 +31,9 @@
 <main>
   <h1>Extensions List</h1>
   <section>
-    <button type="button" x-on:click="activeFilter = 0; filteredExtensions()" :class="activeFilter === 0 ? 'bg-red-500' : 'bg-neutral-100'">All</button>
-    <button type="button" x-on:click="activeFilter = 1; filteredExtensions()" :class="activeFilter === 1 ? 'bg-red-500' : 'bg-neutral-100'">Active</button>
-    <button type="button" x-on:click="activeFilter = 2; filteredExtensions()" :class="activeFilter === 2 ? 'bg-red-500' : 'bg-neutral-100'">Inactive</button>
+    <button type="button" x-on:click="activeFilter = 'all'" :class="activeFilter === 'all' ? 'bg-red-500' : 'bg-neutral-100'">All</button>
+    <button type="button" x-on:click="activeFilter = 'active'" :class="activeFilter === 'active' ? 'bg-red-500' : 'bg-neutral-100'">Active</button>
+    <button type="button" x-on:click="activeFilter = 'inactive'" :class="activeFilter === 'inactive' ? 'bg-red-500' : 'bg-neutral-100'">Inactive</button>
   </section>
   <section>
     <template x-for="extension in filteredExtensions">
@@ -41,7 +41,7 @@
         <img :src="extension.logo" alt="">
         <h2 x-text="extension.name"></h2>
         <p x-text="extension.description"></p>
-        <button>Remove</button>
+        <button type="button" x-on:click="removeExtension(extension)">Remove</button>
         <button
             type="button"
             class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
