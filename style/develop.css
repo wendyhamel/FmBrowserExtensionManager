@@ -1,13 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
-	font-family: Noto Sans;
+	font-family: "Noto Sans";
 	font-style: normal;
 	font-weight: 400 700;
 	font-display: swap;
-	src: url("../assets/fonts/NotoSans-VariableFont_wdth,wght.ttf") format("ttf");
 }
 
 @theme  {
@@ -22,9 +22,9 @@
 	--color-neutral-100: hsl(0, 0%, 93%);
 	--color-neutral-0: hsl(200, 60%, 99%);
 
-	--color-red-700: hsl(3, 86%, 64%);
+	--color-red-700: hsl(3, 77%, 44%);
 	--color-red-500: hsl(3, 71%, 56%);
-	--color-red-400: hsl(3, 77%, 44%);
+	--color-red-400: hsl(3, 86%, 64%);
 
 	--color-gradient-light-start: #EBF2FC;
 	--color-gradient-light-end: #EEF8F9;
