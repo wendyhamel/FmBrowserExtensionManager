@@ -12,7 +12,6 @@
 
 @theme  {
 	--font-sans: "Noto Sans", "sans-serif";
-
 	--color-*: initial;
 	--color-neutral-900: hsl(227, 75%, 14%);
 	--color-neutral-800: hsl(226, 25%, 17%);
