@@ -1,3 +1,34 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+	font-family: Noto Sans;
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url("../assets/fonts/NotoSans-VariableFont_wdth,wght.ttf") format("ttf");
+}
+
+@theme  {
+	--font-sans: "Noto Sans", "sans-serif";
+
+	--color-*: initial;
+	--color-neutral-900: hsl(227, 75%, 14%);
+	--color-neutral-800: hsl(226, 25%, 17%);
+	--color-neutral-700: hsl(225, 23%, 24%);
+	--color-neutral-600: hsl(226, 11%, 37%);
+	--color-neutral-300: hsl(0, 0%, 78%);
+	--color-neutral-200: hsl(217, 61%, 90%);
+	--color-neutral-100: hsl(0, 0%, 93%);
+	--color-neutral-0: hsl(200, 60%, 99%);
+
+	--color-red-700: hsl(3, 86%, 64%);
+	--color-red-500: hsl(3, 71%, 56%);
+	--color-red-400: hsl(3, 77%, 44%);
+
+	--color-gradient-light-start: #EBF2FC;
+	--color-gradient-light-end: #EEF8F9;
+	--color-gradient-dark-start: #040918;
+	--color-gradient-dark-end: #091540;
+}
