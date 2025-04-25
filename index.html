@@ -51,7 +51,7 @@
 </header>
 <main class="md:max-w-3xl md:mx-auto lg:max-w-7xl lg:px-13.5">
   <section class="space-y-4 md:flex md:justify-between">
-    <h1 class="text-center text-[2rem] font-bold text-neutral-900 dark:text-neutral-0">Extensions List</h1>
+    <h1 class="text-center text-[2rem] font-bold text-neutral-900 dark:text-neutral-0 transition">Extensions List</h1>
     <section class="flex justify-center gap-3.5 pb-4 lg:pb-8">
       <button
           type="button"
@@ -81,12 +81,12 @@
   </section>
   <section class="grid gap-3 pb-16 md:grid-cols-2 lg:grid-cols-3">
     <template x-for="extension in filteredExtensions">
-      <article class="rounded-[1.2rem] shadow-md shadow-neutral-200 px-4.5 py-5 space-y-6 border border-neutral-200 bg-neutral-0 dark:border-neutral-600 dark:bg-neutral-800 dark:shadow-none">
+      <article class="rounded-[1.2rem] shadow-md shadow-neutral-200 px-4.5 py-5 space-y-6 border border-neutral-200 bg-neutral-0 dark:border-neutral-600 dark:bg-neutral-800 dark:shadow-none transition">
         <section class="flex items-start gap-4">
           <img :src="extension.logo" alt="">
           <div>
-            <h2 class="pb-1.5 font-bold text-xl text-neutral-900 dark:text-neutral-0" x-text="extension.name"></h2>
-            <p class="tracking-tight leading-[1.38] min-h-[66.21px] text-neutral-600 dark:text-neutral-300" x-text="extension.description"></p>
+            <h2 class="pb-1.5 font-bold text-xl text-neutral-900 dark:text-neutral-0 transition" x-text="extension.name"></h2>
+            <p class="tracking-tight leading-[1.38] min-h-[66.21px] text-neutral-600 dark:text-neutral-300 transition" x-text="extension.description"></p>
           </div>
         </section>
         <section class="flex justify-between items-center">
@@ -99,7 +99,7 @@
           </button>
           <button
               type="button"
-              class="relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2 focus:ring-offset-neutral-0 dark:focus:ring-offset-neutral-800"
+              class="relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2 focus:ring-offset-neutral-0 dark:focus:ring-offset-neutral-800"
               :class="extension.isActive ? 'bg-red-700 dark:bg-red-400 hover:bg-red-500' : 'bg-neutral-300 dark:bg-neutral-600 hover:bg-neutral-300/75 dark:hover:bg-neutral-600/75'"
               role="switch"
               :aria-checked="extension.isActive"
